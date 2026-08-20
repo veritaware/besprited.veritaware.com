@@ -14,24 +14,6 @@
     src: url("/font/tiny5.ttf") format("truetype");
 }
 
-/* Font Awesome Free 6.5.2 webfonts, self-hosted (icons: CC BY 4.0, fonts: SIL OFL 1.1) */
-
-@font-face {
-    font-family: "Font Awesome 6 Free";
-    font-style: normal;
-    font-weight: 900;
-    font-display: block;
-    src: url("/font/fa-solid-900.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: "Font Awesome 6 Brands";
-    font-style: normal;
-    font-weight: 400;
-    font-display: block;
-    src: url("/font/fa-brands-400.woff2") format("woff2");
-}
-
 :root {
     --size-pixeloid-s: 9px;
     --size-pixeloid-m: 18px;
@@ -219,17 +201,10 @@ img {
 
 .button-icon {
     flex-shrink: 0;
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
     font-style: normal;
     font-size: var(--size-tiny-m);
     margin-right: var(--size-tiny-xs);
     line-height: 1;
-}
-
-.button-icon.brand {
-    font-family: "Font Awesome 6 Brands";
-    font-weight: 400;
 }
 
 .button-donate {
@@ -260,50 +235,6 @@ img {
 .button-donate:hover .button-icon,
 .button-donate:active .button-icon {
     color: var(--color-green) !important;
-}
-
-.icon-download::before {
-    content: "\f019";
-}
-
-.icon-github::before {
-    content: "\f09b";
-}
-
-.icon-discord::before {
-    content: "\f392";
-}
-
-.icon-kofi::before {
-    content: "\f0f4";
-}
-
-.icon-windows::before {
-    content: "\f17a";
-}
-
-.icon-apple::before {
-    content: "\f179";
-}
-
-.icon-linux::before {
-    content: "\f17c";
-}
-
-.icon-heart::before {
-    content: "\f004";
-}
-
-.icon-palette::before {
-    content: "\f53f";
-}
-
-.icon-road::before {
-    content: "\f018";
-}
-
-.icon-list::before {
-    content: "\f03a";
 }
 
 /* Sections */
@@ -505,9 +436,15 @@ code {
     color: var(--color-yellow);
 }
 
-.code-block {
+.code-block-wrap {
+    position: relative;
     margin: 0 0 var(--size-pixeloid-s);
+}
+
+.code-block {
+    margin: 0;
     padding: var(--size-pixeloid-s) var(--size-pixeloid-m);
+    padding-right: calc(var(--size-pixeloid-xl) + var(--size-tiny-s));
     background-color: var(--color-crust);
     border: 2px solid var(--color-surface-0);
     overflow-x: auto;
@@ -517,6 +454,38 @@ code {
     padding: 0;
     background-color: transparent;
     color: var(--color-green);
+}
+
+.copy-button {
+    position: absolute;
+    top: 4px;
+    right: 3px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--size-pixeloid-l);
+    height: var(--size-pixeloid-l);
+    padding: 0;
+    background-color: var(--color-surface-0);
+    border: 2px solid var(--color-surface-2);
+    cursor: pointer;
+    transition-property: border-color, background-color;
+    transition-duration: var(--border-duration);
+}
+
+.copy-button:hover,
+.copy-button:active {
+    background-color: var(--color-surface-1);
+    border-color: var(--color-green);
+}
+
+.copy-button.copied {
+    border-color: var(--color-green);
+}
+
+.copy-icon {
+    width: 16px;
+    height: 16px;
 }
 
 .verify-steps {
