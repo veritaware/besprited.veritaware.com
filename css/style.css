@@ -207,6 +207,16 @@ img {
     color: var(--color-crust) !important;
 }
 
+.button-icon-img {
+    width: 14px;
+    height: 14px;
+    line-height: 1;
+}
+
+.nav-icon {
+    margin-right: var(--size-tiny-s);
+}
+
 .button-icon {
     flex-shrink: 0;
     font-family: "Font Awesome 6 Free";
