@@ -16,10 +16,11 @@
 
 :root {
     --size-pixeloid-s: 9px;
+    --size-pixeloid-sm: 14px;
     --size-pixeloid-m: 18px;
     --size-pixeloid-l: 36px;
-    --size-pixeloid-xl: 54px;
-    --size-pixeloid-xxl: 72px;
+    --size-pixeloid-xl: 48px;
+    --size-pixeloid-xxl: 54px;
 
     --size-tiny-xs: 5px;
     --size-tiny-s: 10px;
@@ -59,6 +60,12 @@ a:active {
 img {
     max-width: 100%;
     image-rendering: pixelated;
+}
+
+.roadmap-note {
+    font-family: "Pixeloid Sans", sans-serif;
+    font-size: var(--size-pixeloid-sm);
+    text-align: center;
 }
 
 .wrap {
@@ -288,6 +295,12 @@ main section:last-of-type {
     font-size: var(--size-tiny-l);
 }
 
+.feature-card-ref {
+    margin: var(--size-tiny-s) 0 0;
+    font-size: var(--size-tiny-m);
+    color: var(--color-overlay-1);
+}
+
 .feature-card-more {
     display: flex;
     align-items: center;
@@ -317,7 +330,7 @@ main section:last-of-type {
 
 .page-title {
     margin: 0 0 var(--size-pixeloid-s);
-    font-size: var(--size-pixeloid-l);
+    font-size: var(--size-pixeloid-xl);
     color: var(--color-green);
     text-align: center;
 }
@@ -549,6 +562,16 @@ code {
 .verify-steps pre:last-child,
 .verify-steps ul:last-child {
     margin-bottom: 0;
+}
+
+/* Roadmap */
+
+#roadmap h2.section-title {
+    margin-top: var(--size-pixeloid-l);
+}
+
+#roadmap .feature-grid {
+    margin-bottom: var(--size-pixeloid-l);
 }
 
 /* Community */

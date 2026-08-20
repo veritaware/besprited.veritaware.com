@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap — Besprited</title>
+    <meta name="description"
+        content="Roadmap of planned features for the upcoming versions of Besprited 2D sprite editor.">
+
+    <meta property="og:title" content="Besprited Roadmap">
+    <meta property="og:description" content="Roadmap of planned features for Besprited.">
+    <meta property="og:image" content="/img/ase64.png">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" href="/img/ase64.png" type="image/png">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header class="site-header"></header>
+
+    <main>
+        <section id="roadmap">
+            <div class="wrap">
+                <h1 class="page-title">Roadmap</h1>
+                <p class="roadmap-note">
+                    Features for the current
+                    <a href="https://github.com/veritaware/Besprited/issues?q=is%3Aissue%20milestone%3A1.26.09">1.26.09 milestone</a>
+                    are finished and ready for release.</p>
+
+                <h2 class="section-title">Milestone 1.26.12 — December 2026</h2>
+                <p class="page-intro">Mostly bugfixes and refactors, headlined by one big change under the
+                    hood.</p>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>SDL3 migration</h3>
+                        <p>The rendering and windowing backend is being switched from SDL2 to SDL3.</p>
+                        <p class="feature-card-ref">
+                            <a href="https://github.com/veritaware/Besprited/issues/73">#73</a>
+                        </p>
+                    </div>
+                </div>
+
+                <h2 class="section-title">Milestone 1.27.06 — June 2027</h2>
+                <p class="page-intro">The next big feature release. A few highlights from the list:</p>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>Text tool</h3>
+                        <p>Edit text directly on the document canvas instead of using a separate input dialog.</p>
+                        <p class="feature-card-ref">
+                            <a href="https://github.com/veritaware/Besprited/issues/26">#26</a>
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Gradient tool</h3>
+                        <p>Fill selections and shapes with automatically dithered colour gradients.</p>
+                        <p class="feature-card-ref">
+                            <a href="https://github.com/veritaware/Besprited/issues/10">#10</a>
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Tilemaps &amp; tilesets</h3>
+                        <p>Native support for building and editing tile-based art.</p>
+                        <p class="feature-card-ref">
+                            <a href="https://github.com/veritaware/Besprited/issues/25">#25</a>
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Skew/Shear selection</h3>
+                        <p>Distort selections with skew and shear transforms.</p>
+                        <p class="feature-card-ref">
+                            <a href="https://github.com/veritaware/Besprited/issues/122">#122</a>
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Hue/Saturation adjustment</h3>
+                        <p>Recolour sprites non-destructively with HSL adjustments.</p>
+                        <p class="feature-card-ref">
+                            <a href="https://github.com/veritaware/Besprited/issues/39">#39</a>
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>More format support</h3>
+                        <p>Import and export PSD, Krita, GIMP XCF and APNG files.</p>
+                        <p class="feature-card-ref">
+                            <a href="https://github.com/veritaware/Besprited/issues/112">#112</a>,
+                            <a href="https://github.com/veritaware/Besprited/issues/113">#113</a>,
+                            <a href="https://github.com/veritaware/Besprited/issues/114">#114</a>,
+                            <a href="https://github.com/veritaware/Besprited/issues/117">#117</a>
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Custom pixel aspect ratio</h3>
+                        <p>Work with non-square pixels for a wider range of art styles.</p>
+                        <p class="feature-card-ref">
+                            <a href="https://github.com/veritaware/Besprited/issues/15">#15</a>
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Dark/Light mode hinting</h3>
+                        <p>The application would recognize if to use a light or a dark theme based on OS settings.</p>
+                        <p class="feature-card-ref">
+                            <a href="https://github.com/veritaware/Besprited/issues/38">#38</a>
+                        </p>
+                    </div>
+                </div>
+
+                <p class="roadmap-note">
+                    The detailed list of open issues for the upcoming Milestones can be found at our
+                    <a href="https://github.com/veritaware/Besprited/issues?q=is%3Aissue%20state%3Aopen%20(milestone%3A1.26.12%20OR%20milestone%3A1.27.06)%20label%3A%F0%9F%90%9Efeature">GitHub page</a>.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer"></footer>
+    <script type="module" src="/js/main.js"></script>
+</body>
+
+</html>
