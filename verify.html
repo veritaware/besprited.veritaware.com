@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Downloads — Besprited</title>
+    <meta name="description"
+        content="How to verify Besprited release downloads against their GPG signatures.">
+
+    <meta property="og:title" content="Verify Besprited Downloads">
+    <meta property="og:description" content="How to verify Besprited release downloads against their GPG signatures.">
+    <meta property="og:image" content="/img/ase64.png">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" href="/img/ase64.png" type="image/png">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header class="site-header"></header>
+
+    <main>
+        <section id="verify" class="verify">
+            <div class="wrap">
+                <h1 class="page-title">Verify your download</h1>
+                <p class="page-intro">Every release is signed with my personal GPG key. Verifying the
+                    signature confirms that the file you downloaded is exactly what was published on
+                    GitHub, and hasn't been tampered with or corrupted along the way.</p>
+
+                <ol class="verify-steps">
+                    <li>
+                        <h3>Install GnuPG</h3>
+                        <p>You'll need the <code>gpg</code> command line tool.</p>
+                        <ul class="verify-list">
+                            <li><strong>Linux:</strong> usually preinstalled; otherwise
+                                <code>sudo apt install gnupg</code> (or your distro's equivalent).</li>
+                            <li><strong>macOS:</strong> <code>brew install gnupg</code></li>
+                            <li><strong>Windows:</strong> install
+                                <a href="https://gpg4win.org">Gpg4win</a>, then use "Gpg4win Compatible" or
+                                a terminal with <code>gpg</code> on the PATH.</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <h3>Import my public key</h3>
+                        <p>Fetch the key from the Ubuntu keyserver:</p>
+                        <pre class="code-block"><code>gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 05B861C404ED688D</code></pre>
+                    </li>
+
+                    <li>
+                        <h3>Check the fingerprint</h3>
+                        <p>Don't skip this — importing a key proves nothing on its own. Print the
+                            fingerprint of the key you just imported:</p>
+                        <pre class="code-block"><code>gpg --fingerprint 05B861C404ED688D</code></pre>
+                        <p>It must match this exactly:</p>
+                        <pre class="code-block"><code>6B02 8B2D D159 DCE8 C418  B5BF 05B8 61C4 04ED 688D</code></pre>
+                        <p>You can cross-check it against the
+                            <a href="https://keyserver.ubuntu.com/pks/lookup?search=05B861C404ED688D&fingerprint=on&op=index">public
+                                key listing</a> on the keyserver. If it doesn't match, stop — do not trust
+                            the download.</p>
+                    </li>
+
+                    <li>
+                        <h3>Download the release and its signature</h3>
+                        <p>Grab both the package (e.g. <code>besprited-v1.26.06-linux-x86_64.zip</code>) and
+                            its matching <code>.sig</code> file (e.g.
+                            <code>gpg-besprited-v1.26.06-linux-x86_64.zip.sig</code>) from the
+                            <a href="/download.html">download page</a> or the
+                            <a href="https://github.com/veritaware/Besprited/releases">GitHub releases</a>
+                            page, and place them in the same folder.</p>
+                    </li>
+
+                    <li>
+                        <h3>Verify the signature</h3>
+                        <p>Run, substituting the actual filenames:</p>
+                        <pre class="code-block"><code>gpg --verify gpg-besprited-v1.26.06-linux-x86_64.zip.sig besprited-v1.26.06-linux-x86_64.zip</code></pre>
+                    </li>
+
+                    <li>
+                        <h3>Read the result</h3>
+                        <p>A successful check prints <code>Good signature from "Daniel Praźmo
+                                &lt;d.prazmo@icloud.com&gt;"</code> along with the same fingerprint from
+                            step 3. A warning that the key is <code>not certified with a trusted
+                                signature</code> is expected and fine — that's just GPG's web of trust, and
+                            doesn't affect the verification. What matters is "Good signature" plus a
+                            matching fingerprint.</p>
+                        <p>If you instead see <code>BAD signature</code>, do not use the file — re-download
+                            it, and if the problem persists,
+                            <a href="https://github.com/veritaware/Besprited/issues">open an issue</a>.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer"></footer>
+    <script type="module" src="/js/main.js"></script>
+</body>
+
+</html>

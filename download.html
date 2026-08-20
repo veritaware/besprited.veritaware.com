@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download — Besprited</title>
+    <meta name="description"
+        content="Download Besprited, a free and open source 2D sprite and animation editor, for Windows, macOS or Linux.">
+
+    <meta property="og:title" content="Download Besprited">
+    <meta property="og:description" content="Download Besprited for Windows, macOS or Linux.">
+    <meta property="og:image" content="/img/ase64.png">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" href="/img/ase64.png" type="image/png">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header class="site-header"></header>
+
+    <main>
+        <section id="download" class="download">
+            <div class="wrap">
+                <h1 class="page-title">Download</h1>
+                <p class="page-intro">Grab the latest release of Besprited, and consider supporting development
+                    with a small donation.</p>
+
+                <div class="download-columns">
+                    <div class="download-support">
+                        <h2 class="download-heading">Support Besprited</h2>
+                        <p>Besprited is free and always will be. If it's useful to you, consider
+                            chipping in a few dollars to help keep development going.</p>
+                        <div class="button-row">
+                            <a class="button primary" href="https://ko-fi.com/veritaware">
+                                <i class="button-icon icon-kofi" aria-hidden="true"></i>
+                                Support us on Ko-fi</a>
+                        </div>
+                    </div>
+
+                    <div class="download-box">
+                        <h2 class="download-heading">Get Besprited</h2>
+
+                        <label for="os-select" class="download-label">Operating system</label>
+                        <select id="os-select" class="os-select">
+                            <option value="windows">Windows</option>
+                            <option value="macos">macOS</option>
+                            <option value="linux">Linux</option>
+                        </select>
+
+                        <div class="button-row download-buttons">
+                            <a id="download-button" class="button primary" href="#">
+                                <i id="download-button-icon" class="button-icon brand icon-windows"
+                                    aria-hidden="true"></i>
+                                <span id="download-button-label">Download</span>
+                            </a>
+                        </div>
+
+                        <p class="download-meta">
+                            <span id="download-filename"></span> —
+                            <a id="download-sig" href="#">GPG signature</a> —
+                            <a href="/verify.html">how to verify</a>
+                        </p>
+
+                        <p class="download-note">Looking for other platforms, older versions, or release notes?
+                            See the full <a href="https://github.com/veritaware/Besprited/releases">release
+                                history</a> on GitHub.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer"></footer>
+    <script type="module" src="/js/main.js"></script>
+    <script type="module">
+        import { initDownload } from '/js/download.js';
+        initDownload();
+    </script>
+</body>
+
+</html>
