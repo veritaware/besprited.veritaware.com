@@ -18,6 +18,7 @@
     --size-pixeloid-s: 9px;
     --size-pixeloid-sm: 14px;
     --size-pixeloid-m: 18px;
+    --size-pixeloid-lm: 24px;
     --size-pixeloid-l: 36px;
     --size-pixeloid-xl: 48px;
     --size-pixeloid-xxl: 54px;
@@ -370,7 +371,8 @@ main section:last-of-type {
 
 .download-heading {
     margin: 0 0 var(--size-pixeloid-m);
-    font-size: var(--size-pixeloid-m);
+    font-size: var(--size-pixeloid-lm);
+    text-align: center;
     color: var(--color-sky);
 }
 
@@ -436,7 +438,16 @@ main section:last-of-type {
     margin-top: auto;
     padding-top: var(--size-pixeloid-m);
     color: var(--color-subtext-0);
+    font-size: var(--size-tiny-m);
+}
+
+.install-note {
+    margin: var(--size-pixeloid-m) 0 0;
+    margin-top: auto;
+    padding-top: var(--size-pixeloid-m);
+    color: var(--color-subtext-0);
     font-size: var(--size-tiny-l);
+    text-align: center;
 }
 
 /* Verify */
