@@ -1,24 +1,87 @@
-const RELEASE_TAG = 'v1.26.06';
+const RELEASE_TAG = 'v1.26.09';
+const VERSION = '1.26.09';
 const RELEASE_BASE = `https://github.com/veritaware/Besprited/releases/download/${RELEASE_TAG}/`;
 
+// Each format: label shown in the format picker, the asset filename, and the
+// GPG signature filename (or null when the release ships no signature for it).
 const PACKAGES = {
     windows: {
         label: 'Windows',
-        icon: 'icon-windows',
-        file: `besprited-${RELEASE_TAG}-windows-x86_64.zip`,
         img: '/img/windows-macchiato.png',
+        formats: [
+            {
+                id: 'exe',
+                label: 'Installer (.exe)',
+                file: `besprited-${RELEASE_TAG}-windows-x86_64.exe`,
+                sig: `gpg-besprited-${RELEASE_TAG}-windows-x86_64.exe.sig`,
+            },
+            {
+                id: 'zip',
+                label: 'Portable (.zip)',
+                file: `besprited-${RELEASE_TAG}-windows-x86_64.zip`,
+                sig: `gpg-besprited-${RELEASE_TAG}-windows-x86_64.zip.sig`,
+            },
+        ],
     },
     macos: {
         label: 'macOS',
-        icon: 'icon-apple',
-        file: `besprited-${RELEASE_TAG}-macos-sillicon.zip`,
         img: '/img/apple-macchiato.png',
+        formats: [
+            {
+                id: 'silicon',
+                label: 'Apple Silicon (.dmg)',
+                file: `besprited-${RELEASE_TAG}-macos-silicon.dmg`,
+                sig: `gpg-besprited-${RELEASE_TAG}-macos-silicon.dmg.sig`,
+            },
+            {
+                id: 'intel',
+                label: 'Intel (.dmg)',
+                file: `besprited-${RELEASE_TAG}-macos-intel.dmg`,
+                sig: `gpg-besprited-${RELEASE_TAG}-macos-intel.dmg.sig`,
+            },
+        ],
     },
     linux: {
         label: 'Linux',
-        icon: 'icon-linux',
-        file: `besprited-${RELEASE_TAG}-linux-x86_64.zip`,
         img: '/img/linux-macchiato.png',
+        formats: [
+            {
+                id: 'appimage',
+                label: 'AppImage (any distro)',
+                file: `Besprited-${RELEASE_TAG}-anylinux-x86_64.AppImage`,
+                sig: null,
+            },
+            {
+                id: 'targz',
+                label: 'Tarball (.tar.gz)',
+                file: `besprited-${RELEASE_TAG}-linux-x86_64.tar.gz`,
+                sig: `gpg-besprited-${RELEASE_TAG}-linux-x86_64.tar.gz.sig`,
+            },
+            {
+                id: 'rpm',
+                label: 'Fedora / openSUSE (.rpm)',
+                file: `besprited-${VERSION}-x86_64.rpm`,
+                sig: `gpg-besprited-${VERSION}-x86_64.rpm.sig`,
+            },
+            {
+                id: 'deb-debian13',
+                label: 'Debian 13 (.deb)',
+                file: `besprited-${VERSION}-debian13_amd64.deb`,
+                sig: `gpg-besprited-${VERSION}-debian13-amd64.deb.sig`,
+            },
+            {
+                id: 'deb-ubuntu2404',
+                label: 'Ubuntu 24.04 (.deb)',
+                file: `besprited-${VERSION}-ubuntu24.04_amd64.deb`,
+                sig: `gpg-besprited-${VERSION}-ubuntu24.04-amd64.deb.sig`,
+            },
+            {
+                id: 'deb-ubuntu2604',
+                label: 'Ubuntu 26.04 (.deb)',
+                file: `besprited-${VERSION}-ubuntu26.04_amd64.deb`,
+                sig: `gpg-besprited-${VERSION}-ubuntu26.04-amd64.deb.sig`,
+            },
+        ],
     },
 };
 
@@ -33,30 +96,59 @@ function detectOS() {
     return 'windows';
 }
 
-function updateDownload(os) {
+function populateFormats(os) {
+    const formatSelect = document.getElementById('format-select');
+    if (!formatSelect) return;
+
     const pkg = PACKAGES[os] ?? PACKAGES.windows;
+    formatSelect.innerHTML = '';
+    for (const format of pkg.formats) {
+        const option = document.createElement('option');
+        option.value = format.id;
+        option.textContent = format.label;
+        formatSelect.appendChild(option);
+    }
+}
+
+function updateDownload(os, formatId) {
+    const pkg = PACKAGES[os] ?? PACKAGES.windows;
+    const format = pkg.formats.find((f) => f.id === formatId) ?? pkg.formats[0];
 
     const button = document.getElementById('download-button');
-    //const icon = document.getElementById('download-button-icon');
     const label = document.getElementById('download-button-label');
     const filename = document.getElementById('download-filename');
     const sig = document.getElementById('download-sig');
+    const sigWrap = document.getElementById('download-sig-wrap');
     const img = document.getElementById('download-button-img');
 
-    button.href = RELEASE_BASE + pkg.file;
+    button.href = RELEASE_BASE + format.file;
     label.textContent = `Download for ${pkg.label}`;
-    //icon.className = `button-icon brand ${pkg.icon}`;
-    img.src = `${pkg.img}`;
-    filename.textContent = pkg.file;
-    sig.href = RELEASE_BASE + `gpg-${pkg.file}.sig`;
+    img.src = pkg.img;
+    filename.textContent = format.file;
+
+    if (format.sig) {
+        sig.href = RELEASE_BASE + format.sig;
+        sigWrap.hidden = false;
+    } else {
+        sigWrap.hidden = true;
+    }
 }
 
 export function initDownload() {
-    const select = document.getElementById('os-select');
-    if (!select) return;
+    const osSelect = document.getElementById('os-select');
+    const formatSelect = document.getElementById('format-select');
+    if (!osSelect || !formatSelect) return;
 
-    select.value = detectOS();
-    updateDownload(select.value);
+    osSelect.value = detectOS();
+    populateFormats(osSelect.value);
+    updateDownload(osSelect.value, formatSelect.value);
 
-    select.addEventListener('change', () => updateDownload(select.value));
+    osSelect.addEventListener('change', () => {
+        populateFormats(osSelect.value);
+        updateDownload(osSelect.value, formatSelect.value);
+    });
+
+    formatSelect.addEventListener('change', () => {
+        updateDownload(osSelect.value, formatSelect.value);
+    });
 }

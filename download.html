@@ -49,6 +49,9 @@
                             <option value="linux">Linux</option>
                         </select>
 
+                        <label for="format-select" class="download-label">Package</label>
+                        <select id="format-select" class="os-select"></select>
+
                         <div class="button-row download-buttons">
                             <a id="download-button" class="button primary" href="#">
                                 <img id="download-button-img" src="/img/windows-macchiato.png" class="button-icon-img button-icon" />
@@ -57,8 +60,8 @@
                         </div>
 
                         <p class="download-meta">
-                            <span id="download-filename"></span> –
-                            <a id="download-sig" href="#">GPG signature</a> –
+                            <span id="download-filename"></span><span id="download-sig-wrap"> –
+                            <a id="download-sig" href="#">GPG signature</a></span> –
                             <a href="/verify.html">how to verify</a>
                         </p>
 
