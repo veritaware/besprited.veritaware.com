@@ -26,7 +26,7 @@
                 <h1 class="page-title">Roadmap</h1>
                 <h2 class="section-title">Milestone 1.26.12 — December 2026</h2>
                 <p class="page-intro">
-                    This milestone will mostly focus on code cleanup and refactoring, trying to solve any hidden technical debts inherited from LiberSprite/Aseprite and to better prepare the codebase for upcoming bigger future features.
+                    This milestone will mostly focus on bugfixes, code cleanup and refactoring, trying to solve any hidden technical debts inherited from LiberSprite/Aseprite and to better prepare the codebase for upcoming bigger future features.
                 </p>
                 <div class="feature-grid">
                     <div class="feature-card">
@@ -34,6 +34,85 @@
                         <p>The rendering and windowing backend is being upgraded from SDL2 to SDL3.</p>
                         <p class="feature-card-ref">
                             <a href="https://github.com/veritaware/Besprited/issues/73">#73</a>
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Layer groups</h3>
+                        <p>Organise the layer stack by grouping related layers together.</p>
+                        <p class="feature-card-ref">
+                            <a href="https://github.com/veritaware/Besprited/issues/84">#84</a>
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Catppuccin theme</h3>
+                        <p>A first-party theme built around the Catppuccin palette.</p>
+                        <p class="feature-card-ref">
+                            <a href="https://github.com/veritaware/Besprited/issues/66">#66</a>
+                        </p>
+                    </div>
+                </div>
+
+                <h2 class="section-title">Milestone 1.27.03 — March 2027</h2>
+                <p class="page-intro">A round of Aseprite-parity improvements and broader file-format support. A few highlights:</p>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>More format support</h3>
+                        <p>Import and export PSD, Krita, GIMP XCF, APNG and TIFF files.</p>
+                        <p class="feature-card-ref">
+                            <a href="https://github.com/veritaware/Besprited/issues/112">#112</a>,
+                            <a href="https://github.com/veritaware/Besprited/issues/113">#113</a>,
+                            <a href="https://github.com/veritaware/Besprited/issues/114">#114</a>,
+                            <a href="https://github.com/veritaware/Besprited/issues/117">#117</a>,
+                            <a href="https://github.com/veritaware/Besprited/issues/152">#152</a>
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Dark/Light mode hinting</h3>
+                        <p>The application would recognize if to use a light or a dark theme based on OS settings.</p>
+                        <p class="feature-card-ref">
+                            <a href="https://github.com/veritaware/Besprited/issues/38">#38</a>
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Open multiple files at once</h3>
+                        <p>Select and open several documents in a single step.</p>
+                        <p class="feature-card-ref">
+                            <a href="https://github.com/veritaware/Besprited/issues/150">#150</a>
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Select and edit multiple layers</h3>
+                        <p>Apply edits and transforms across several selected layers at once.</p>
+                        <p class="feature-card-ref">
+                            <a href="https://github.com/veritaware/Besprited/issues/141">#141</a>
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Paste as new layer</h3>
+                        <p>Drop clipboard contents straight onto a fresh layer.</p>
+                        <p class="feature-card-ref">
+                            <a href="https://github.com/veritaware/Besprited/issues/137">#137</a>
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Draggable canvas size borders</h3>
+                        <p>Resize the canvas by dragging its edges directly.</p>
+                        <p class="feature-card-ref">
+                            <a href="https://github.com/veritaware/Besprited/issues/151">#151</a>
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Numeric entry for sliders</h3>
+                        <p>Type exact values into sliders instead of dragging.</p>
+                        <p class="feature-card-ref">
+                            <a href="https://github.com/veritaware/Besprited/issues/52">#52</a>
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>ICU internationalization</h3>
+                        <p>Replace the internalization engine with ICU for more robust localisation.</p>
+                        <p class="feature-card-ref">
+                            <a href="https://github.com/veritaware/Besprited/issues/59">#59</a>
                         </p>
                     </div>
                 </div>
@@ -77,16 +156,6 @@
                         </p>
                     </div>
                     <div class="feature-card">
-                        <h3>More format support</h3>
-                        <p>Import and export PSD, Krita, GIMP XCF and APNG files.</p>
-                        <p class="feature-card-ref">
-                            <a href="https://github.com/veritaware/Besprited/issues/112">#112</a>,
-                            <a href="https://github.com/veritaware/Besprited/issues/113">#113</a>,
-                            <a href="https://github.com/veritaware/Besprited/issues/114">#114</a>,
-                            <a href="https://github.com/veritaware/Besprited/issues/117">#117</a>
-                        </p>
-                    </div>
-                    <div class="feature-card">
                         <h3>Custom pixel aspect ratio</h3>
                         <p>Work with non-square pixels for a wider range of art styles.</p>
                         <p class="feature-card-ref">
@@ -94,17 +163,24 @@
                         </p>
                     </div>
                     <div class="feature-card">
-                        <h3>Dark/Light mode hinting</h3>
-                        <p>The application would recognize if to use a light or a dark theme based on OS settings.</p>
+                        <h3>Layer thumbnails</h3>
+                        <p>Preview each layer's contents right in the layer list.</p>
                         <p class="feature-card-ref">
-                            <a href="https://github.com/veritaware/Besprited/issues/38">#38</a>
+                            <a href="https://github.com/veritaware/Besprited/issues/136">#136</a>
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Custom UI fonts</h3>
+                        <p>Load your own fonts for the application interface.</p>
+                        <p class="feature-card-ref">
+                            <a href="https://github.com/veritaware/Besprited/issues/85">#85</a>
                         </p>
                     </div>
                 </div>
 
                 <p class="roadmap-note">
                     The detailed list of open issues for the upcoming Milestones can be found at our
-                    <a href="https://github.com/veritaware/Besprited/issues?q=is%3Aissue%20state%3Aopen%20(milestone%3A1.26.12%20OR%20milestone%3A1.27.06)%20label%3A%F0%9F%90%9Efeature">GitHub page</a>.
+                    <a href="https://github.com/veritaware/Besprited/issues?q=is%3Aissue%20state%3Aopen%20(milestone%3A1.26.12%20OR%20milestone%3A1.27.03%20OR%20milestone%3A1.27.06)%20label%3A%F0%9F%90%9Efeature">GitHub page</a>.
                 </p>
             </div>
         </section>
