@@ -10,11 +10,11 @@
 
     <meta property="og:title" content="Verify Besprited Downloads">
     <meta property="og:description" content="How to verify Besprited release downloads against their GPG signatures.">
-    <meta property="og:image" content="/img/ase64.png">
+    <meta property="og:image" content="/img/ase64.png?v=37e6cf8d7c">
     <meta property="og:type" content="website">
 
-    <link rel="icon" href="/img/ase64.png" type="image/png">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/img/ase64.png?v=37e6cf8d7c" type="image/png">
+    <link rel="stylesheet" href="/css/style.css?v=e3ac956fdb">
 </head>
 
 <body>
@@ -48,7 +48,7 @@
                         <div class="code-block-wrap">
                             <pre class="code-block"><code>gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 05B861C404ED688D</code></pre>
                             <button type="button" class="copy-button" aria-label="Copy to clipboard">
-                                <img src="/img/copy-machiatto.png" class="copy-icon" alt="">
+                                <img src="/img/copy-machiatto.png?v=42fc5ca995" class="copy-icon" alt="">
                             </button>
                         </div>
                     </li>
@@ -60,14 +60,14 @@
                         <div class="code-block-wrap">
                             <pre class="code-block"><code>gpg --fingerprint 05B861C404ED688D</code></pre>
                             <button type="button" class="copy-button" aria-label="Copy to clipboard">
-                                <img src="/img/copy-machiatto.png" class="copy-icon" alt="">
+                                <img src="/img/copy-machiatto.png?v=42fc5ca995" class="copy-icon" alt="">
                             </button>
                         </div>
                         <p>It must match this exactly:</p>
                         <div class="code-block-wrap">
                             <pre class="code-block"><code>6B02 8B2D D159 DCE8 C418  B5BF 05B8 61C4 04ED 688D</code></pre>
                             <button type="button" class="copy-button" aria-label="Copy to clipboard">
-                                <img src="/img/copy-machiatto.png" class="copy-icon" alt="">
+                                <img src="/img/copy-machiatto.png?v=42fc5ca995" class="copy-icon" alt="">
                             </button>
                         </div>
                         <p>You can cross-check it against the
@@ -92,7 +92,7 @@
                         <div class="code-block-wrap">
                             <pre class="code-block"><code>gpg --verify gpg-besprited-v1.26.09-linux-x86_64.tar.gz.sig besprited-v1.26.09-linux-x86_64.tar.gz</code></pre>
                             <button type="button" class="copy-button" aria-label="Copy to clipboard">
-                                <img src="/img/copy-machiatto.png" class="copy-icon" alt="">
+                                <img src="/img/copy-machiatto.png?v=42fc5ca995" class="copy-icon" alt="">
                             </button>
                         </div>
                     </li>
@@ -115,9 +115,9 @@
     </main>
 
     <footer class="site-footer"></footer>
-    <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/main.js?v=795a2aef39"></script>
     <script type="module">
-        import { initCopyButtons } from '/js/verify.js';
+        import { initCopyButtons } from '/js/verify.js?v=33b8f6868a';
         initCopyButtons();
     </script>
 </body>

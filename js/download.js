@@ -7,7 +7,7 @@ const RELEASE_BASE = `https://github.com/veritaware/Besprited/releases/download/
 const PACKAGES = {
     windows: {
         label: 'Windows',
-        img: '/img/windows-macchiato.png',
+        img: '/img/windows-macchiato.png?v=d79e2b512d',
         formats: [
             {
                 id: 'exe',
@@ -25,7 +25,7 @@ const PACKAGES = {
     },
     macos: {
         label: 'macOS',
-        img: '/img/apple-macchiato.png',
+        img: '/img/apple-macchiato.png?v=8746477cbe',
         formats: [
             {
                 id: 'silicon',
@@ -43,7 +43,7 @@ const PACKAGES = {
     },
     linux: {
         label: 'Linux',
-        img: '/img/linux-macchiato.png',
+        img: '/img/linux-macchiato.png?v=30f937d667',
         formats: [
             {
                 id: 'appimage',

@@ -1,5 +1,5 @@
-const COPY_ICON = '/img/copy-machiatto.png';
-const CHECK_ICON = '/img/check-machiatto.png';
+const COPY_ICON = '/img/copy-machiatto.png?v=42fc5ca995';
+const CHECK_ICON = '/img/check-machiatto.png?v=43457e7dbf';
 const RESET_DELAY = 1500;
 
 export function initCopyButtons() {

@@ -1,17 +1,17 @@
-@import url("/css/catppuccin-macchiato.css");
+@import url("/css/catppuccin-macchiato.css?v=e72a922c11");
 
 /* Pixeloid Sans by GGBotNet, SIL OFL 1.1 */
 
 @font-face {
     font-family: "Pixeloid Sans";
-    src: url("/font/pixeloid-sans.ttf") format("truetype");
+    src: url("/font/pixeloid-sans.ttf?v=6c74e947e1") format("truetype");
 }
 
 /* Tiny5 by Stefan Schmidt, SIL OFL 1.1 */
 
 @font-face {
     font-family: "Tiny5";
-    src: url("/font/tiny5.ttf") format("truetype");
+    src: url("/font/tiny5.ttf?v=bee1bd6386") format("truetype");
 }
 
 :root {
