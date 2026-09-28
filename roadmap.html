@@ -10,15 +10,45 @@
 
     <meta property="og:title" content="Besprited Roadmap">
     <meta property="og:description" content="Roadmap of planned features for Besprited.">
-    <meta property="og:image" content="/img/ase64.png?v=37e6cf8d7c">
+    <meta property="og:image" content="https://besprited.veritaware.com/img/og-banner.png?v=1a79fdf566">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://besprited.veritaware.com/roadmap.html">
+    <meta name="twitter:card" content="summary_large_image">
     <meta property="og:type" content="website">
 
     <link rel="icon" href="/img/ase64.png?v=37e6cf8d7c" type="image/png">
-    <link rel="stylesheet" href="/css/style.css?v=e3ac956fdb">
+    <link rel="stylesheet" href="/css/style.css?v=f380433109">
 </head>
 
 <body>
-    <header class="site-header"></header>
+    <header class="site-header">
+        <div class="wrap">
+            <a href="/">
+                <img class="logo" src="/img/branding.png?v=1e8067ff63" alt="Besprited">
+            </a>
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="/download.html">
+                      <img src="/img/download-macchiato.png?v=7f35b06f38" class="button-icon-img nav-icon" alt="" />
+                      Download
+                    </a></li>
+                    <li><a href="/roadmap.html">
+                      <img src="/img/road-macchiato.png?v=072536e6bc" class="button-icon-img nav-icon" alt="" />
+                      Roadmap
+                    </a></li>
+                    <li><a href="https://github.com/veritaware/Besprited/blob/trunk/CONTRIBUTING.md">
+                      <img src="/img/github-macchiato.png?v=66575144fb" class="button-icon-img nav-icon" alt="" />
+                      Contribute
+                    </a></li>
+                    <li><a href="https://ko-fi.com/veritaware" class="button-donate">
+                      <img src="/img/heart-macchiato.png?v=a91f41d54f" class="button-icon-img nav-icon" alt="" />
+                      Donate
+                    </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <main>
         <section id="roadmap">
@@ -26,9 +56,18 @@
                 <h1 class="page-title">Roadmap</h1>
                 <h2 class="section-title">Milestone 1.26.12 — December 2026</h2>
                 <p class="page-intro">
-                    This milestone will mostly focus on bugfixes, code cleanup and refactoring, trying to solve any hidden technical debts inherited from LiberSprite/Aseprite and to better prepare the codebase for upcoming bigger future features.
+                    This milestone mostly focuses on bugfixes, code cleanup and refactoring, solving hidden technical debts inherited from LibreSprite/Aseprite and preparing the codebase for bigger upcoming features. The security and refactoring audit is already complete.
                 </p>
                 <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>Security &amp; refactoring audit</h3>
+                        <p>Static-analysis findings, hardened file loaders and extension installer, undo fixes, leak fixes and a round of command and filter refactors.</p>
+                        <p class="feature-card-ref">
+                            <span class="feature-card-done">Done</span> · <a href="https://github.com/veritaware/Besprited/issues/219">#219</a>,
+                            <a href="https://github.com/veritaware/Besprited/issues/120">#120</a>,
+                            <a href="https://github.com/veritaware/Besprited/issues/214">#214</a>
+                        </p>
+                    </div>
                     <div class="feature-card">
                         <h3>SDL3 migration</h3>
                         <p>The rendering and windowing backend is being upgraded from SDL2 to SDL3.</p>
@@ -38,9 +77,15 @@
                     </div>
                     <div class="feature-card">
                         <h3>Layer groups</h3>
-                        <p>Organise the layer stack by grouping related layers together.</p>
+                        <p>Organise the layer stack by grouping related layers together, delivered in phases: layer tree indexing, undo and API support, crash recovery, timeline tree rows and .ase persistence.</p>
                         <p class="feature-card-ref">
-                            <a href="https://github.com/veritaware/Besprited/issues/84">#84</a>
+                            <a href="https://github.com/veritaware/Besprited/issues/84">#84</a>,
+                            <a href="https://github.com/veritaware/Besprited/issues/275">#275</a>,
+                            <a href="https://github.com/veritaware/Besprited/issues/276">#276</a>,
+                            <a href="https://github.com/veritaware/Besprited/issues/277">#277</a>,
+                            <a href="https://github.com/veritaware/Besprited/issues/278">#278</a>,
+                            <a href="https://github.com/veritaware/Besprited/issues/279">#279</a>,
+                            <a href="https://github.com/veritaware/Besprited/issues/281">#281</a>
                         </p>
                     </div>
                     <div class="feature-card">
@@ -48,6 +93,30 @@
                         <p>A first-party theme built around the Catppuccin palette.</p>
                         <p class="feature-card-ref">
                             <a href="https://github.com/veritaware/Besprited/issues/66">#66</a>
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Better .ase compatibility</h3>
+                        <p>Preserve more of the Aseprite file format when saving and loading: color profiles, cel positioning, tag options, slices, user data and more.</p>
+                        <p class="feature-card-ref">
+                            <a href="https://github.com/veritaware/Besprited/issues/189">#189</a>,
+                            <a href="https://github.com/veritaware/Besprited/issues/190">#190</a>,
+                            <a href="https://github.com/veritaware/Besprited/issues/191">#191</a>,
+                            <a href="https://github.com/veritaware/Besprited/issues/192">#192</a>,
+                            <a href="https://github.com/veritaware/Besprited/issues/193">#193</a>,
+                            <a href="https://github.com/veritaware/Besprited/issues/194">#194</a>,
+                            <a href="https://github.com/veritaware/Besprited/issues/195">#195</a>,
+                            <a href="https://github.com/veritaware/Besprited/issues/196">#196</a>,
+                            <a href="https://github.com/veritaware/Besprited/issues/197">#197</a>,
+                            <a href="https://github.com/veritaware/Besprited/issues/307">#307</a>
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>OpenRaster support</h3>
+                        <p>Open and save .ora files, built on new ZIP and in-memory PNG groundwork.</p>
+                        <p class="feature-card-ref">
+                            <a href="https://github.com/veritaware/Besprited/issues/299">#299</a>,
+                            <a href="https://github.com/veritaware/Besprited/issues/300">#300</a>
                         </p>
                     </div>
                 </div>
@@ -186,8 +255,14 @@
         </section>
     </main>
 
-    <footer class="site-footer"></footer>
-    <script type="module" src="/js/main.js?v=795a2aef39"></script>
+    <footer class="site-footer">
+        <div class="wrap">
+            <p>Besprited is Free and Open Source Software distributed under the GNU General Public License Version 2.</p>
+            <p>Copyright (c) 2026
+                <a href="https://veritaware.com" class="veritaware">Veritaware</a>
+            </p>
+        </div>
+    </footer>
 </body>
 
 </html>

@@ -126,6 +126,9 @@ function updateDownload(os, formatId) {
     img.src = pkg.img;
     filename.textContent = format.file;
 
+    const archNote = document.getElementById('arch-note');
+    if (archNote) archNote.hidden = os !== 'linux';
+
     if (format.sig) {
         sig.href = RELEASE_BASE + format.sig;
         sigWrap.hidden = false;

@@ -151,6 +151,21 @@ img {
     color: var(--color-subtext-0);
 }
 
+.hero .hero-meta {
+    margin: var(--size-pixeloid-l) auto 0;
+    max-width: none;
+    font-size: var(--size-tiny-l);
+    color: var(--color-overlay-1);
+}
+
+.hero-screenshot {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: var(--size-pixeloid-l) auto 0;
+    border: 2px solid var(--color-surface-0);
+}
+
 .button-row {
     display: flex;
     justify-content: center;
@@ -302,6 +317,10 @@ main section:last-of-type {
     color: var(--color-overlay-1);
 }
 
+.feature-card-done {
+    color: var(--color-green);
+}
+
 .feature-card-more {
     display: flex;
     align-items: center;
@@ -439,6 +458,13 @@ main section:last-of-type {
     padding-top: var(--size-pixeloid-m);
     color: var(--color-subtext-0);
     font-size: var(--size-tiny-m);
+}
+
+.arch-note {
+    margin: var(--size-pixeloid-m) 0 0;
+    color: var(--color-subtext-0);
+    font-size: var(--size-tiny-m);
+    text-align: center;
 }
 
 .install-note {

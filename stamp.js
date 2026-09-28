@@ -2,14 +2,13 @@
 /*
  * Cache-busting stamper.
  *
- * Rewrites every reference to a local asset (in img/, css/, js/, font/,
- * modules/) across the HTML/CSS/JS source so it carries a `?v=<hash>` query
+ * Rewrites every reference to a local asset (in img/, css/, js/, font/) across the HTML/CSS/JS source so it carries a `?v=<hash>` query
  * string. Browsers treat a changed query string as a new URL, so an edited
  * asset is picked up immediately instead of being served stale from cache.
  *
  * The stamp is a short hash of the asset's own bytes, so it changes when and
  * only when the asset changes, and is identical on every machine. Some assets
- * (js/main.js, css/style.css, the modules) are themselves scanned and
+ * (css/style.css, js/download.js) are themselves scanned and
  * rewritten — when one of those gets a new stamp its content changes too, so
  * the pass repeats until the whole tree reaches a fixed point.
  *
@@ -26,12 +25,12 @@ const ROOT = dirname(fileURLToPath(import.meta.url));
 const SELF = fileURLToPath(import.meta.url);
 
 // Files whose contents we scan and rewrite.
-const SOURCE_DIRS = ['.', 'css', 'js', 'modules'];
+const SOURCE_DIRS = ['.', 'css', 'js'];
 const SOURCE_EXT = new Set(['.html', '.css', '.js']);
 
 // Any absolute reference into one of these asset trees, with or without an
 // existing ?v= suffix.
-const ASSET_RE = /\/(?:img|css|js|font|modules)\/[\w./-]+?\.(?:png|css|js|ttf|woff2?|svg|jpg|jpeg|gif|webp)(?:\?v=[\w]+)?/g;
+const ASSET_RE = /\/(?:img|css|js|font)\/[\w./-]+?\.(?:png|css|js|ttf|woff2?|svg|jpg|jpeg|gif|webp)(?:\?v=[\w]+)?/g;
 
 function collectSources() {
     const files = [];

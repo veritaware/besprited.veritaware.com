@@ -10,15 +10,45 @@
 
     <meta property="og:title" content="Download Besprited">
     <meta property="og:description" content="Download Besprited for Windows, macOS or Linux.">
-    <meta property="og:image" content="/img/ase64.png?v=37e6cf8d7c">
+    <meta property="og:image" content="https://besprited.veritaware.com/img/og-banner.png?v=1a79fdf566">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://besprited.veritaware.com/download.html">
+    <meta name="twitter:card" content="summary_large_image">
     <meta property="og:type" content="website">
 
     <link rel="icon" href="/img/ase64.png?v=37e6cf8d7c" type="image/png">
-    <link rel="stylesheet" href="/css/style.css?v=e3ac956fdb">
+    <link rel="stylesheet" href="/css/style.css?v=f380433109">
 </head>
 
 <body>
-    <header class="site-header"></header>
+    <header class="site-header">
+        <div class="wrap">
+            <a href="/">
+                <img class="logo" src="/img/branding.png?v=1e8067ff63" alt="Besprited">
+            </a>
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="/download.html">
+                      <img src="/img/download-macchiato.png?v=7f35b06f38" class="button-icon-img nav-icon" alt="" />
+                      Download
+                    </a></li>
+                    <li><a href="/roadmap.html">
+                      <img src="/img/road-macchiato.png?v=072536e6bc" class="button-icon-img nav-icon" alt="" />
+                      Roadmap
+                    </a></li>
+                    <li><a href="https://github.com/veritaware/Besprited/blob/trunk/CONTRIBUTING.md">
+                      <img src="/img/github-macchiato.png?v=66575144fb" class="button-icon-img nav-icon" alt="" />
+                      Contribute
+                    </a></li>
+                    <li><a href="https://ko-fi.com/veritaware" class="button-donate">
+                      <img src="/img/heart-macchiato.png?v=a91f41d54f" class="button-icon-img nav-icon" alt="" />
+                      Donate
+                    </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <main>
         <section id="download" class="download">
@@ -34,7 +64,7 @@
                             chipping in a few dollars to help keep development going.</p>
                         <div class="button-row">
                             <a class="button primary" href="https://ko-fi.com/veritaware">
-                                <img src="/img/coffee-bl-macchiato.png?v=d92fc4c29a" class="button-icon-img button-icon" />
+                                <img src="/img/coffee-bl-macchiato.png?v=d92fc4c29a" class="button-icon-img button-icon"  alt="" />
                                 Support us on Ko-fi</a>
                         </div>
                     </div>
@@ -54,7 +84,7 @@
 
                         <div class="button-row download-buttons">
                             <a id="download-button" class="button primary" href="#">
-                                <img id="download-button-img" src="/img/windows-macchiato.png?v=d79e2b512d" class="button-icon-img button-icon" />
+                                <img id="download-button-img" src="/img/windows-macchiato.png?v=d79e2b512d" class="button-icon-img button-icon"  alt="" />
                                 <span id="download-button-label">Download</span>
                             </a>
                         </div>
@@ -63,6 +93,11 @@
                             <span id="download-filename"></span><span id="download-sig-wrap"> –
                             <a id="download-sig" href="#">GPG signature</a></span> –
                             <a href="/verify.html">how to verify</a>
+                        </p>
+
+                        <p id="arch-note" class="arch-note" hidden>
+                            Arch Linux user? Grab the
+                            <a href="https://gist.github.com/Nidrax/592aa62c8f200a93ffad2f45023b20e2"><code>besprited-bin</code> PKGBUILD</a>.
                         </p>
 
                         <p class="install-note">
@@ -82,10 +117,16 @@
         </section>
     </main>
 
-    <footer class="site-footer"></footer>
-    <script type="module" src="/js/main.js?v=795a2aef39"></script>
+    <footer class="site-footer">
+        <div class="wrap">
+            <p>Besprited is Free and Open Source Software distributed under the GNU General Public License Version 2.</p>
+            <p>Copyright (c) 2026
+                <a href="https://veritaware.com" class="veritaware">Veritaware</a>
+            </p>
+        </div>
+    </footer>
     <script type="module">
-        import { initDownload } from '/js/download.js?v=4ae79b2f76';
+        import { initDownload } from '/js/download.js?v=1ec6213646';
         initDownload();
     </script>
 </body>

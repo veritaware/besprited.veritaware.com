@@ -4,21 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Besprited — 2D sprite &amp; animation editor</title>
+    <title>Besprited — free pixel-art &amp; sprite animation editor</title>
     <meta name="description"
-        content="Besprited is a free and open source program for creating and animating 2D sprites, with real-time previews, onion skinning, tiled drawing and more.">
+        content="Besprited is a free and open source pixel-art and sprite animation editor with layers, onion skinning, tiling mode, palettes and more. For Windows, macOS and Linux.">
 
     <meta property="og:title" content="Besprited">
-    <meta property="og:description" content="A free and open source program for creating and animating 2D sprites.">
-    <meta property="og:image" content="/img/ase64.png?v=37e6cf8d7c">
+    <meta property="og:description" content="A free and open source pixel-art and sprite animation editor.">
+    <meta property="og:image" content="https://besprited.veritaware.com/img/og-banner.png?v=1a79fdf566">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://besprited.veritaware.com/">
+    <meta name="twitter:card" content="summary_large_image">
     <meta property="og:type" content="website">
 
     <link rel="icon" href="/img/ase64.png?v=37e6cf8d7c" type="image/png">
-    <link rel="stylesheet" href="/css/style.css?v=e3ac956fdb">
+    <link rel="stylesheet" href="/css/style.css?v=f380433109">
 </head>
 
 <body>
-    <header class="site-header"></header>
+    <header class="site-header">
+        <div class="wrap">
+            <a href="/">
+                <img class="logo" src="/img/branding.png?v=1e8067ff63" alt="Besprited">
+            </a>
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="/download.html">
+                      <img src="/img/download-macchiato.png?v=7f35b06f38" class="button-icon-img nav-icon" alt="" />
+                      Download
+                    </a></li>
+                    <li><a href="/roadmap.html">
+                      <img src="/img/road-macchiato.png?v=072536e6bc" class="button-icon-img nav-icon" alt="" />
+                      Roadmap
+                    </a></li>
+                    <li><a href="https://github.com/veritaware/Besprited/blob/trunk/CONTRIBUTING.md">
+                      <img src="/img/github-macchiato.png?v=66575144fb" class="button-icon-img nav-icon" alt="" />
+                      Contribute
+                    </a></li>
+                    <li><a href="https://ko-fi.com/veritaware" class="button-donate">
+                      <img src="/img/heart-macchiato.png?v=a91f41d54f" class="button-icon-img nav-icon" alt="" />
+                      Donate
+                    </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <main>
         <section class="hero">
@@ -27,12 +57,15 @@
                 <p>An opinionated free and open source application for creating and animating 2D sprites.</p>
                 <div class="button-row">
                     <a class="button primary" href="/download.html">
-                        <img src="/img/download-bl-macchiato.png?v=f7306ab4f2" class="button-icon-img button-icon" />
+                        <img src="/img/download-bl-macchiato.png?v=f7306ab4f2" class="button-icon-img button-icon" alt="" />
                         Download latest release</a>
                     <a class="button" href="https://github.com/veritaware/Besprited">
-                        <img src="/img/github-macchiato.png?v=66575144fb" class="button-icon-img button-icon" />
+                        <img src="/img/github-macchiato.png?v=66575144fb" class="button-icon-img button-icon" alt="" />
                         View on GitHub</a>
                 </div>
+                <p class="hero-meta">Version 1.26.09 &middot; Windows, macOS and Linux &middot; GPLv2</p>
+                <img class="hero-screenshot" src="/img/screenshot.png?v=2feab2c7ce" width="1600" height="844"
+                    alt="Besprited editing a pixel-art sprite, with the timeline, layers and palette panels visible.">
             </div>
         </section>
 
@@ -47,9 +80,10 @@
                     which moved from the open-source GPLv2 license into a proprietary one in 2016.
                 </p>
                 <p>
-                    Besprited has been created in 2026 as a response to a very slow and stale
-                    development cycle of LibreSprite, with the goal of providing the users with
-                    a faster access to a broader list of in-built features.
+                    Besprited was created in 2026 to bring a broader set of built-in features to users
+                    faster. It is developed in the open alongside LibreSprite: improvements that make
+                    sense there are contributed upstream, and the LibreSprite community is very much
+                    part of the audience Besprited is built for.
                 </p>
             </div>
         </section>
@@ -75,7 +109,7 @@
                         <p>Use ready-to-go palettes or build your own from scratch.</p>
                     </div>
                     <div class="feature-card">
-                        <h3>Tiled preview</h3>
+                        <h3>Tiling mode</h3>
                         <p>Draw patterns and textures with the canvas tiling as you go.</p>
                     </div>
                     <div class="feature-card">
@@ -88,7 +122,7 @@
                     </div>
                     <div class="feature-card">
                         <h3>Shading</h3>
-                        <p>Drawing shadows and highlights on your sprite is easy thangs to the Shading Ink tool.</p>
+                        <p>Drawing shadows and highlights on your sprite is easy thanks to the Shading Ink tool.</p>
                     </div>
                     <div class="feature-card">
                         <h3>Blend Modes</h3>
@@ -114,21 +148,30 @@
                 <h2 class="section-title">Community</h2>
                 <div class="button-row">
                     <a class="button" href="https://discord.gg/hTp5gPUUJT">
-                        <img src="/img/discord-macchiato.png?v=fafa8e466c" class="button-icon-img button-icon" />
+                        <img src="/img/discord-macchiato.png?v=fafa8e466c" class="button-icon-img button-icon" alt="" />
                         Discord</a>
                     <a class="button" href="https://ko-fi.com/veritaware">
-                        <img src="/img/coffee-macchiato.png?v=44951a65bc" class="button-icon-img button-icon" />
+                        <img src="/img/coffee-macchiato.png?v=44951a65bc" class="button-icon-img button-icon" alt="" />
                         Ko-fi</a>
+                    <a class="button" href="https://github.com/veritaware/Besprited/blob/trunk/CONTRIBUTING.md">
+                        <img src="/img/github-macchiato.png?v=66575144fb" class="button-icon-img button-icon" alt="" />
+                        Contribute</a>
                     <a class="button" href="https://github.com/veritaware/Besprited/issues">
-                        <img src="/img/github-macchiato.png?v=66575144fb" class="button-icon-img button-icon" />
+                        <img src="/img/github-macchiato.png?v=66575144fb" class="button-icon-img button-icon" alt="" />
                         Report an issue</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer"></footer>
-    <script type="module" src="/js/main.js?v=795a2aef39"></script>
+    <footer class="site-footer">
+        <div class="wrap">
+            <p>Besprited is Free and Open Source Software distributed under the GNU General Public License Version 2.</p>
+            <p>Copyright (c) 2026
+                <a href="https://veritaware.com" class="veritaware">Veritaware</a>
+            </p>
+        </div>
+    </footer>
 </body>
 
 </html>
