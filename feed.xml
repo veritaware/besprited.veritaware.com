@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Besprited news and releases</title>
+    <link>https://besprited.veritaware.com/</link>
+    <description>News and new releases of Besprited, a free and open source pixel-art and sprite animation editor.</description>
+    <language>en</language>
+    <atom:link href="https://besprited.veritaware.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Thu, 06 Oct 2026 10:46:00 +0000</lastBuildDate>
+    <item>
+      <title>Versioning change in Besprited</title>
+      <link>https://github.com/veritaware/Besprited/milestones</link>
+      <guid isPermaLink="false">besprited-versioning-change</guid>
+      <pubDate>Thu, 06 Oct 2026 10:46:00 +0000</pubDate>
+      <description>Starting with the March 2027 release, Besprited versions will drop the leading "1" major version, making v27.03.0 the version that will follow v1.26.12.</description>
+    </item>
+    <item>
+      <title>Besprited 1.26.09</title>
+      <link>https://github.com/veritaware/Besprited/releases/tag/v1.26.09</link>
+      <guid isPermaLink="false">besprited-1.26.09</guid>
+      <pubDate>Mon, 31 Aug 2026 23:31:00 +0000</pubDate>
+      <description>Besprited 1.26.09 is out. Download it for Windows, macOS and Linux from https://besprited.veritaware.com/download.html</description>
+    </item>
+  </channel>
+</rss>
